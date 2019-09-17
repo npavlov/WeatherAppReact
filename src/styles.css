@@ -1,0 +1,15 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  text-align: center;
+  height: 100%;
+  font-family: Tahoma, Geneva, sans-serifж;
+}
+html,
+#root {
+  height: 100%;
+}
