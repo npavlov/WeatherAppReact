@@ -6,7 +6,7 @@ import configureStore from "./store";
 
 import "./styles.css";
 import { Provider } from "react-redux";
-import { IWeatherService } from "./Interfaces";
+import { IWeatherService } from "./Interfaces/IWeatherService";
 import WeatherService from "./service";
 import WeatherContext from "./context";
 

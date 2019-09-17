@@ -2,8 +2,14 @@ import React from "react";
 import { Link, withRouter, RouteComponentProps } from "react-router-dom";
 import styled, { css } from "styled-components";
 
+	interface IButtonProps {
+    selected: boolean;
+	}
+
 const Nav = ({ location, match }: RouteComponentProps) => {
-  const Button = styled.button`
+
+	
+  const Button = styled.button<IButtonProps>`
     background: transparent;
     border-radius: 15px;
     border: 0;
@@ -13,7 +19,7 @@ const Nav = ({ location, match }: RouteComponentProps) => {
     padding: 0.25em 1em;
     font-weight: 700;
     font-size: 1em;
-    ${(props: any) =>
+    ${(props: IButtonProps) =>
       props.selected &&
       css`
         background: gray;
@@ -22,7 +28,7 @@ const Nav = ({ location, match }: RouteComponentProps) => {
       `};
   `;
 
-  const contains = (path, v) => path.endsWith(v);
+  const contains = (path : any, v: any) => path.endsWith(v);
 
   return (
     <div>

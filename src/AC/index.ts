@@ -1,5 +1,5 @@
 import messages from "../constants";
-import { IWeatherService } from "../Interfaces";
+import { IWeatherService } from "../Interfaces/IWeatherService";
 
 const loadTodayCast = (
   service: IWeatherService,
@@ -14,12 +14,12 @@ const loadTodayCast = (
   }
 });
 
-const setTodayCast = info => ({
+const setTodayCast = (info: any)=> ({
   type: messages.LOAD_SUCCESS,
   payload: info
 });
 
-const setError = error => ({
+const setError = (error: any) => ({
   type: messages.LOAD_FAIL,
   payload: error
 });

@@ -1,7 +1,7 @@
 import React from "react";
 import { createSelector } from "reselect";
 import styled, { css } from "styled-components";
-import { IWeatherState, IDate } from "../../Interfaces";
+import { IWeatherState, IDate } from "../../Interfaces/IWeatherState";
 import { useSelector } from "react-redux";
 import { ImgStyled, SmallText, Break } from "../../Controls";
 import { getDayName, getDateFormatted, getColorByAbbr } from "../../Helpers";

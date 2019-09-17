@@ -1,4 +1,4 @@
-const formatNumber = x => ("0" + x).slice(-2);
+const formatNumber = (x: number) => ("0" + x).slice(-2);
 const getFormatedDate = (x: Date) =>
   formatNumber(x.getHours()) + ":" + formatNumber(x.getMinutes());
 

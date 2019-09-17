@@ -1,5 +1,5 @@
 import messages from "../constants";
-import { IWeatherState } from "../Interfaces";
+import { IWeatherState } from "../Interfaces/IWeatherState";
 
 interface IAction {
   type: string;

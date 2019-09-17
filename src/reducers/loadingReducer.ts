@@ -1,6 +1,6 @@
 import messages from "../constants";
 
-const loadReducer = (state = false, action) => {
+const loadReducer = (state = false, action : any) => {
   switch (action.type) {
     case messages.LOAD:
       return true;

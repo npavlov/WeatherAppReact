@@ -3,7 +3,8 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import Nav from "../Nav";
 import Today from "../Today";
 import Week from "../Week";
-import { IWeatherService, IWeatherState } from "../../Interfaces";
+import { IWeatherService } from "../../Interfaces/IWeatherService";
+import { IWeatherState } from "../../Interfaces/IWeatherState";
 import { useDispatch, useSelector } from "react-redux";
 import { loadTodayCast } from "../../AC";
 import { createSelector } from "reselect";
@@ -17,7 +18,7 @@ export default function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const loadRequest = position => {
+    const loadRequest = (position : Position) => {
       const { latitude, longitude } = position.coords;
 
       dispatch(loadTodayCast(weatherService, latitude, longitude));

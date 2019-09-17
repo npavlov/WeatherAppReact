@@ -1,4 +1,5 @@
-import { IWeatherService, IWeatherState, IDate } from "../Interfaces";
+import { IWeatherService } from "../Interfaces/IWeatherService";
+import { IWeatherState, IDate} from "../Interfaces/IWeatherState";
 
 const fetchUrl = process.env.WEATHER_FETCH_ADDRESS;
 const picUrl = process.env.WEATHER_PIC_URL;
@@ -45,7 +46,7 @@ export default class WeatherService implements IWeatherService {
             days: []
           };
 
-          x.consolidated_weather.forEach(t => {
+          x.consolidated_weather.forEach((t:any) => {
             const shorten = t.weather_state_abbr;
 
             const day: IDate = {

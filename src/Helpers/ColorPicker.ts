@@ -1,4 +1,4 @@
-const getColorByAbbr = x => {
+const getColorByAbbr = (x : string) => {
   switch (x) {
     case "c":
       return "#FFF8DE";
