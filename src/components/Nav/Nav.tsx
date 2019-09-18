@@ -32,10 +32,10 @@ const Nav = ({ location, match }: RouteComponentProps) => {
 
   return (
     <div>
-      <Link to="/day">
+      <Link to="day">
         <Button selected={contains(location.pathname, "day")}>Day</Button>
       </Link>
-      <Link to="/week">
+      <Link to="week">
         <Button selected={contains(location.pathname, "week")}>Week</Button>
       </Link>
     </div>

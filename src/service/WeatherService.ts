@@ -1,8 +1,8 @@
 import { IWeatherService } from "../Interfaces/IWeatherService";
 import { IWeatherState, IDate} from "../Interfaces/IWeatherState";
 
-const fetchUrl = process.env.WEATHER_FETCH_ADDRESS;
-const picUrl = process.env.WEATHER_PIC_URL;
+const fetchUrl = "https://cors-anywhere.herokuapp.com/https://www.metaweather.com";
+const picUrl = "https://www.metaweather.com";
 
 export default class WeatherService implements IWeatherService {
   GetLocation = (latitude: number, longtitude: number): Promise<string> => {
