@@ -1,8 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Nav from "../Nav";
-import Today from "../Today";
-import Week from "../Week";
 import { IWeatherService } from "../../Interfaces/IWeatherService";
 import { IWeatherState } from "../../Interfaces/IWeatherState";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,6 +9,7 @@ import { createSelector } from "reselect";
 import Spinner from "../Spinner";
 import { getColorByAbbr } from "../../Helpers";
 import WeatherContext from "../../context";
+import Loadable from "react-loadable";
 
 export default function App() {
   const weatherService: IWeatherService = useContext(WeatherContext);
@@ -18,7 +17,7 @@ export default function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const loadRequest = (position : Position) => {
+    const loadRequest = position => {
       const { latitude, longitude } = position.coords;
 
       dispatch(loadTodayCast(weatherService, latitude, longitude));
@@ -44,6 +43,20 @@ export default function App() {
   const weather = useSelector(forecastSelector);
 
   const spinnerBlock = loading && <Spinner />;
+
+  const Today = Loadable({
+    loader: () => import("../Today"),
+    loading() {
+      return <div>Loading...</div>;
+    }
+  });
+
+  const Week = Loadable({
+    loader: () => import("../Week"),
+    loading() {
+      return <div>Loading...</div>;
+    }
+  });
 
   const tabsBlock = !loading && (
     <Switch>
