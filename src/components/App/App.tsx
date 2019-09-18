@@ -17,7 +17,7 @@ export default function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const loadRequest = position => {
+    const loadRequest = (position : any)=> {
       const { latitude, longitude } = position.coords;
 
       dispatch(loadTodayCast(weatherService, latitude, longitude));
