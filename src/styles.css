@@ -13,3 +13,7 @@ html,
 #root {
   height: 100%;
 }
+
+button:focus {
+  outline: 0;
+}
